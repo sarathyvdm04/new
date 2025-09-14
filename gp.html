@@ -10,6 +10,141 @@
     <p>ruru is a Ruby binding for the Ruby C API, allowing you to write Ruby extensions in Rust.</p>
     <p>For more information, visit the <a href="https://www.google.com/search?q=ruru+tech&sca_esv=53569ca3ec5332b8&ei=KsjDaMfwHNGNnesP2_LZuAk&oq=ruru&gs_lp=Egxnd3Mtd2l6LXNlcnAiBHJ1cnUqAggDMgoQLhiABBhDGIoFMgsQLhiABBjHARivATIFEC4YgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAuGIAESObJLVD3-SxY_5EtcAF4A5ABBJgB4QOgAa8VqgEJMC4zLjIuMS4zuAEByAEA-AEBmAIJoAKHMqgCCsICBBAAGEfCAgoQABiABBhDGIoFwgITEAAYgAQYQxi0AhiKBRjqAtgBAcICEhAuGAMYtAIY6gIYChiPAdgBAcICEBAAGAMYtAIY6gIYjwHYAQHCAgsQABiABBiRAhiKBcICDhAuGIAEGLEDGNEDGMcBwgIIEAAYgAQYsQPCAg0QABiABBixAxhDGIoFwgIQEAAYgAQYsQMYQxiDARiKBcICFhAuGIAEGLEDGNEDGEMYgwEYxwEYigXCAhAQLhiABBixAxhDGNQCGIoFwgITEC4YgAQYsQMY0QMYQxjHARiKBcICCxAAGIAEGLEDGIMBwgIZEC4YgAQYQxiKBRiXBRjcBBjeBBjfBNgBApgDJOIDBRIBMSBA8QUKicGTZjtaxYgGAZAGCLoGBAgBGAe6BgYIAhABGBSSBwszLjAuNC4xLjktMaAH9lCyBwUyLTQuMbgHrgnCBwczLTIuNi4xyAeiAg&sclient=gws-wiz-serp#sv=CBAS5xUKwhUKBtrZ29IPABK3FQraBwrXB7rZ29IP0AcKGGh0dHBzOi8vd3d3LnJ1cnV0ZWsuY29tLxIXUnVydXRlayBQcml2YXRlIExpbWl0ZWQalgdkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQUNBQUFBQWdDQVlBQUFCemVucjBBQUFDWmtsRVFWUjRBYlhYUXhRY1VSQ0Y0ZlRFdG0zYnRtM2JYTVYyc29tMWlyR05iZHUyYlR1VmYxR0xIcjhlbmZNTmI3MnFVU05HTkM1bGpyNk5neDdZakd1NGpkMFlnbVQyYkRTYUY4SU5pQi9Ia0NKYXpYUGdIUVI3VVJOeEVBdlpNL1ljVWN5eXJBM1l4K044MFJoZ1B3VExZUG5LMEx5L0syYXNKYnorQW1raTJid0VCRStRSUZBMi82TE41VFU3THBJRGpJQmdza0UySHdRSEl6bkFRZ2hhR0dUalEvQWdrZ05NaDZDWFFUWWRCRmNpT1VBYkNMWVlaRHRDc0NwWU1BUDZZQTFPNFJyT1l6TW1vSVF0bXhBZjhBOFZBNnlaQ0xjZ3FPTXZsQXZyOEFjU3hHbFUxYnFCRUx4R1RSL3Jac1ZSdjUrVWh2cmpHOFNoUGxvL0Q2SU9ZZ29tWVNOK1FYQU1TWDAxbnczeDhBaXowUUdOMEFHVHNRSnowRGxkNno3RjJjQzBRMzlkcHkxdVFqeDh4RVRFOWRWOEZNVG1KVG9nbGtaOGJkVmMyQXhSczhuWHRxMlpIeTNRQ2xWOE50WmdLZnlCcU92SVpNOEVHQ0lwVGtMUWtycEw2T2IwTDNRQW9qNGdtNU42SGVKWXFqcXRjbFA3RjgrUnlMUjVNWWhOUDQrSTZSQnhxYTBGVVgxTkI1Z01VVThSSjR5TlVTK0lPbVJhdEF1aTVvUzVOV3dMVVQ4Unk2VG9Oa1IxREhPQW9oQ2IvQ1pGRHlDcVhwZ0RKSVhZRkRNcHVobkJUeUF0eENhdlNkRk9pSm9iNWdBVklPb3Y0cGdVVFlTb0o0Z1Z4Z0F6SWVwVXFOdUJUaUUyVDRZM0VEWFNTZkVoaUhxTkRBNmJXMWdIVVYrUTJza0NaZkVYb2k0ampXR3RDM01nTm1OQytRaW5RR3llb1VtUW1nTFlBN0U1akZpaERPRENXb2lIU3hpUFJxaUMraGlHdlg2eXFjTDVHMWtZaXo4UWh6WWdhYVNPY0l0aEI4VEFWVFNOMXNsbUhvekVKbHpGQTl6R1BreERHVmpoOVBnUGp1NnAxT3BoQzhrQUFBQUFTVVZPUks1Q1lJST0gATgBCtwBCtkB0tnb0g_SAQoXUnVydXRlayBQcml2YXRlIExpbWl0ZWQSGGh0dHBzOi8vd3d3LnJ1cnV0ZWsuY29tLxqcAVJVUlVURUsgaXMgYSBBSS1iYXNlZCBpbnRlbGxpZ2VudCB2aWRlbyBhbmFseXRpY3MgaXMgdGhlIHBvd2VyIGJlaGluZCB0aGUgQ0NUViBzdXJ2ZWlsbGFuY2UgaW4gbWFueSBTbWFydCBDaXRpZXMsIEFpcnBvcnRzLCBSYWlsd2F5cyBhbmQgTGF3IEVuZm9yY2VtZW50IC4uLgrYBgrVBsLZ29IPzgYSF1J1cnV0ZWsgUHJpdmF0ZSBMaW1pdGVkGuICChhodHRwczovL3d3dy5ydXJ1dGVrLmNvbS8SF1J1cnV0ZWsgUHJpdmF0ZSBMaW1pdGVkGpwBUlVSVVRFSyBpcyBhIEFJLWJhc2VkIGludGVsbGlnZW50IHZpZGVvIGFuYWx5dGljcyBpcyB0aGUgcG93ZXIgYmVoaW5kIHRoZSBDQ1RWIHN1cnZlaWxsYW5jZSBpbiBtYW55IFNtYXJ0IENpdGllcywgQWlycG9ydHMsIFJhaWx3YXlzIGFuZCBMYXcgRW5mb3JjZW1lbnQgLi4uIAEqAmVuMgJJTjoYKhZTYXJhdGh5dmRtMDRAZ21haWwuY29tQh8vcz90Ym09bWFwJmdzX3JpPW1hcHMmc3VnZ2VzdD1wSjBBSWtFSG9wLTBnR25TZE0yN3ZxYkRKaTA1Y1E1VldDV1hROjE3NTc2NjIwMzcyNjhSF1J1cnV0ZWsgUHJpdmF0ZSBMaW1pdGVkUjUYBSoXUnVydXRlayBQcml2YXRlIExpbWl0ZWQ6GGh0dHBzOi8vd3d3LnJ1cnV0ZWsuY29tL3I9ChhodHRwczovL3d3dy5ydXJ1dGVrLmNvbS8oIzIfU291cmNlOiBSdXJ1dGVrIFByaXZhdGUgTGltaXRlZHrXAhoXUnVydXRlayBQcml2YXRlIExpbWl0ZWQiFndlYnJlc3VsdF9GaXBKQ3ZTdzRaQUowAWDujwZqCk1TQUYgLSBTUlByhQKqARBXRUJfUkVTVUxUX0lOTkVSsgEjChhodHRwczovL3d3dy5ydXJ1dGVrLmNvbS8SA09GRhgAIADiAcgBCqgBPGI-UlVSVVRFSzwvYj4gaXMgYSBBSS1iYXNlZCBpbnRlbGxpZ2VudCB2aWRlbyBhbmFseXRpY3MgaXMgdGhlIHBvd2VyIGJlaGluZCB0aGUgQ0NUViBzdXJ2ZWlsbGFuY2UgaW4gbWFueSBTbWFydCBDaXRpZXMsIEFpcnBvcnRzLCBSYWlsd2F5cyBhbmQgTGF3IEVuZm9yY2VtZW50Jm5ic3A7Li4uEhdSdXJ1dGVrIFByaXZhdGUgTGltaXRlZBgAIBqgAWLAAQHgAQHoAQEKnQUKmgXK2dvSD5MFEu4EIusEL3NlYXJjaC9hYm91dC10aGlzLXJlc3VsdD9vcmlnaW49d3d3Lmdvb2dsZS5jb20mcmVxPUNoaG9kSFJ3Y3pvdkwzZDNkeTV5ZFhKMWRHVnJMbU52YlM4U0JCb0NDQUFhOFFJU0FnZ0FHZ0FpQUNvQU1nWUlBUklDYVc0NkFFSUVDQUVRQUVvQVdnQnlBSG9BZ2tETEFnZ0FFQUFZQUNBQUtoWUtCSEoxY25VVkFBQUFBQm9KYVhZN2NEdHlkWEoxS2tzS0JIUmxZMmdWQUFBQUFCb0RkR1ZqR2dsMFpXTm9ibWxqWVd3YUNuUmxZMmh1YVdOcFlXNGFEWFJsWTJodWIyeHZaMmxqWVd3YURIUmxZMmh1YjJ4dloybGxjeG9GZEdWamFITXlHR2gwZEhCek9pOHZkM2QzTG5KMWNuVjBaV3N1WTI5dEx6b1hVblZ5ZFhSbGF5QlFjbWwyWVhSbElFeHBiV2wwWldSQ3FBRThZajVTVlZKVlZFVkxQQzlpUGlCcGN5QmhJRUZKTFdKaGMyVmtJR2x1ZEdWc2JHbG5aVzUwSUhacFpHVnZJR0Z1WVd4NWRHbGpjeUJwY3lCMGFHVWdjRzkzWlhJZ1ltVm9hVzVrSUhSb1pTQkRRMVJXSUhOMWNuWmxhV3hzWVc1alpTQnBiaUJ0WVc1NUlGTnRZWEowSUVOcGRHbGxjeXdnUVdseWNHOXlkSE1zSUZKaGFXeDNZWGx6SUdGdVpDQk1ZWGNnUlc1bWIzSmpaVzFsYm5RbWJtSnpjRHN1TGk0aUFoQUJTQUJZQUdnQSZobD1lbi1JTiZnbD1JThoWaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbVoAYAFoAXAAeAASIGF0cml0ZW0taHR0cHM6Ly93d3cucnVydXRlay5jb20vGC8gvN7djQUwAg">click</a>
         <link  rel="stylesheet"ref="66.css">
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main-container">
+  <svg class="svg-container">
+    <defs>
+      <filter id="turbulent-displace" colorInterpolationFilters="sRGB" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise1" seed="1" />
+        <feOffset in="noise1" dx="0" dy="0" result="offsetNoise1">
+          <animate attributeName="dy" values="700; 0" dur="6s" repeatCount="indefinite" calcMode="linear" />
+        </feOffset>
+
+        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise2" seed="1" />
+        <feOffset in="noise2" dx="0" dy="0" result="offsetNoise2">
+          <animate attributeName="dy" values="0; -700" dur="6s" repeatCount="indefinite" calcMode="linear" />
+        </feOffset>
+
+        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise1" seed="2" />
+        <feOffset in="noise1" dx="0" dy="0" result="offsetNoise3">
+          <animate attributeName="dx" values="490; 0" dur="6s" repeatCount="indefinite" calcMode="linear" />
+        </feOffset>
+
+        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise2" seed="2" />
+        <feOffset in="noise2" dx="0" dy="0" result="offsetNoise4">
+          <animate attributeName="dx" values="0; -490" dur="6s" repeatCount="indefinite" calcMode="linear" />
+        </feOffset>
+
+        <feComposite in="offsetNoise1" in2="offsetNoise2" result="part1" />
+        <feComposite in="offsetNoise3" in2="offsetNoise4" result="part2" />
+        <feBlend in="part1" in2="part2" mode="color-dodge" result="combinedNoise" />
+
+        <feDisplacementMap in="SourceGraphic" in2="combinedNoise" scale="30" xChannelSelector="R" yChannelSelector="B" />
+      </filter>
+    </defs>
+  </svg>
+
+  <div class="card-container">
+    <div class="inner-container">
+      <div class="border-outer">
+        <div class="main-card"></div>
+      </div>
+      <div class="glow-layer-1"></div>
+      <div class="glow-layer-2"></div>
+    </div>
+
+    <div class="overlay-1"></div>
+    <div class="overlay-2"></div>
+    <div class="background-glow"></div>
+
+    <div class="content-container">
+      <div class="content-top">
+        <div class="scrollbar-glass">
+          Dramatic
+        </div>
+        <p class="title">Electric Border</p>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="content-bottom">
+        <p class="description">In case you'd like to emphasize something very dramatically.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <svg class="svg-container1">
+    <defs>
+      <filter id="turbulent-displace" colorInterpolationFilters="sRGB" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise1" seed="1" />
+        <feOffset in="noise1" dx="0" dy="0" result="offsetNoise1">
+          <animate attributeName="dy" values="700; 0" dur="6s" repeatCount="indefinite" calcMode="linear" />
+        </feOffset>
+
+        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise2" seed="1" />
+        <feOffset in="noise2" dx="0" dy="0" result="offsetNoise2">
+          <animate attributeName="dy" values="0; -700" dur="6s" repeatCount="indefinite" calcMode="linear" />
+        </feOffset>
+
+        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise1" seed="2" />
+        <feOffset in="noise1" dx="0" dy="0" result="offsetNoise3">
+          <animate attributeName="dx" values="490; 0" dur="6s" repeatCount="indefinite" calcMode="linear" />
+        </feOffset>
+
+        <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="10" result="noise2" seed="2" />
+        <feOffset in="noise2" dx="0" dy="0" result="offsetNoise4">
+          <animate attributeName="dx" values="0; -490" dur="6s" repeatCount="indefinite" calcMode="linear" />
+        </feOffset>
+
+        <feComposite in="offsetNoise1" in2="offsetNoise2" result="part1" />
+        <feComposite in="offsetNoise3" in2="offsetNoise4" result="part2" />
+        <feBlend in="part1" in2="part2" mode="color-dodge" result="combinedNoise" />
+
+        <feDisplacementMap in="SourceGraphic" in2="combinedNoise" scale="30" xChannelSelector="R" yChannelSelector="B" />
+      </filter>
+    </defs>
+  </svg>
+
+  <div class="card-container1">
+    <div class="inner-container1">
+      <div class="border-outer1">
+        <div class="main-card1"></div>
+      </div>
+      <div class="glow-layer-11"></div>
+      <div class="glow-layer-21"></div>
+    </div>
+
+    <div class="overlay-11"></div>
+    <div class="overlay-21"></div>
+    <div class="background-glow1"></div>
+
+    <div class="content-container1">
+      <div class="content-top1">
+        <div class="scrollbar-glass1">
+          Dramatic
+        </div>
+        <p class="title1">Electric Border</p>
+      </div>
+
+      <hr class="divider1" />
+
+      <div class="content-bottom1">
+        <p class="description1">In case you'd like to emphasize something very dramatically.</p>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
     
 </body>
 
